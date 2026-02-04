@@ -22,6 +22,8 @@ RUN mamba create -y -n stargraph stargraph && \
 ENV PATH="/opt/conda/envs/stargraph/bin:$PATH"
 WORKDIR /data
 
+# Verify the installation works (using the correct name)
+RUN stargraph.sh --help
 
-# DEBUG: List the files to find the correct executable name
-RUN ls -F /opt/conda/envs/stargraph/bin/
+# Set the default command for the container
+CMD ["stargraph.sh", "--help"]
