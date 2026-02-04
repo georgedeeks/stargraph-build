@@ -21,4 +21,7 @@ RUN mamba create -y -n stargraph stargraph && \
 
 ENV PATH="/opt/conda/envs/stargraph/bin:$PATH"
 WORKDIR /data
-RUN stargraph --help
+
+
+# DEBUG: List the files to find the correct executable name
+RUN ls -F /opt/conda/envs/stargraph/bin/
